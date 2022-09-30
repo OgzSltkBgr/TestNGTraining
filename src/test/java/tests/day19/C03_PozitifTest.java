@@ -1,4 +1,4 @@
-package tests.day18;
+package tests.day19;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,7 +6,7 @@ import pages.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C03_ConfigReader {
+public class C03_PozitifTest {
     @Test
     public void test01() {
         // 1) com.techproed altinda bir package olustur : smoketest
@@ -29,5 +29,7 @@ public class C03_ConfigReader {
         Assert.assertTrue(hotelMyCampPage.basariliGirisYazisiElementi.isDisplayed());
 
         Driver.closeDriver();
+
     }
 }
+

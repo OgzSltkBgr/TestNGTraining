@@ -10,15 +10,35 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
 public class Driver {
+    private Driver(){
+
+    }
 
     private static WebDriver driver;
 
     public static WebDriver getDriver(){
 
         if (driver==null){
-            WebDriverManager.chromedriver().setup();
-            driver= new ChromeDriver();
+            switch (ConfigReader.getProperty("browser")){
 
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driver= new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driver=new FirefoxDriver();
+                    break;
+                case "opera":
+                    WebDriverManager.operadriver().setup();
+                    driver=new OperaDriver();
+                case "safari":
+                    WebDriverManager.safaridriver().setup();
+                    driver=new SafariDriver();
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver= new ChromeDriver();
+            }
         }
 
         driver.manage().window().maximize();
@@ -33,4 +53,3 @@ public class Driver {
         }
     }
 }
-

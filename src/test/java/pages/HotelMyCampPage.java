@@ -25,4 +25,7 @@ public class HotelMyCampPage {
 
     @FindBy(xpath = "//span[@class='caption-subject font-green-sharp bold uppercase']")
     public WebElement basariliGirisYazisiElementi;
+
+    @FindBy(xpath = "//div[@class='validation-summary-errors']")
+    public WebElement girisYapilamadiYaziElementi;
 }
