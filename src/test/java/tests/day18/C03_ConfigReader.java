@@ -7,7 +7,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C03_ConfigReader {
-    @Test
+    @Test (groups = {"gp2","gp1"})
     public void test01() {
         // 1) com.techproed altinda bir package olustur : smoketest
         //2) Bir Class olustur : PositiveTest

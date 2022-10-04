@@ -13,7 +13,7 @@ public abstract class TestBaseBeforeClassAfterClass {
     protected WebDriver driver;
     protected Actions actions;
     protected static Faker faker;
-    @BeforeClass
+    @BeforeClass (groups = "gp1")
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -22,7 +22,7 @@ public abstract class TestBaseBeforeClassAfterClass {
         actions = new Actions(driver);
         faker = new Faker();
     }
-    @AfterClass
+    @AfterClass (groups = "gp1")
     public void tearDown() {
         driver.quit();
     }

@@ -18,4 +18,8 @@ public class C03_Priority extends TestBaseBeforeMethodAfterMethod {
     public void amazonTesti() {
         driver.get("https://techproeducation.com");
     }
+    @Test (groups = "gp1")
+    public void hepsiburadaTesti() {
+        driver.get("https://hepsiburada.com");
+    }
 }

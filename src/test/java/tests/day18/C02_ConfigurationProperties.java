@@ -8,8 +8,8 @@ public class C02_ConfigurationProperties {
     @Test
     public void test01() {
         //Amazon sayfasına ve facebook sayfasına gidiniz
-        String url = ConfigReader.getProperty("amznUrl");
-        String urlFace= ConfigReader.getProperty("faceUrl");
+        String url = ConfigReader.getProperty("amazonUrl");
+        String urlFace= ConfigReader.getProperty("facebookUrl");
         Driver.getDriver().get(url);
         Driver.getDriver().get(urlFace);
         Driver.closeDriver();
