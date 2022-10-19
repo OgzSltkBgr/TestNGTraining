@@ -6,10 +6,10 @@
   buyuk projelerde birbirine bagli calisan class'lar varsa bunu dikkate almak lazim
   o zaman class seviyesinde farkli browser'larda calismak sorun olabilir-->
 
-<suite name="allTests" verbose="3" parallel="classes" thread-count="3">
+<suite name="allTests" verbose="4" parallel="classes" thread-count="2">
     <test name="regression">
         <packages>
-            <package name="tests.*"/>
+            <package name="tests.day20"/>
         </packages>
     </test>
 </suite>
