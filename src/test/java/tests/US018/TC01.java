@@ -9,10 +9,12 @@ import pages.SpendingPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC01  {
+public class TC01 extends TestBaseRapor {
     @Test
-    public void testCase01() {
+    public void testCase01()  {
+        extentTest = extentReports.createTest("RequestID geri isteme istegi", "Vendor olarak RequestID geri isteme istegi olusturulabilmeli");
         SpendingPage spendingPage=new SpendingPage();
         Actions actions = new Actions(Driver.getDriver());
         JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
@@ -22,14 +24,22 @@ public class TC01  {
         spendingPage.emailBox.sendKeys(ConfigReader.getProperty("spendingEmail"));
         spendingPage.passwordBox.sendKeys(ConfigReader.getProperty("spendingPassword"));
         spendingPage.sigInButton.click();
+        extentTest.info("Spendinggood sitesine gidildi, vendor olarak giris yapıldı");
+
         ReusableMethods.waitFor(3);
         spendingPage.myAccount.click();
+        extentTest.info("My account butonuna tiklandi.");
         js.executeScript("arguments[0].scrollIntoView(true);",spendingPage.dashboard);
+
         ReusableMethods.waitFor(1);
         spendingPage.storeManager.click();
+        extentTest.info("Store Manager butonuna tiklandi.");
+
         js.executeScript("arguments[0].scrollIntoView(true);",spendingPage.home);
         ReusableMethods.waitFor(1);
         js.executeScript("arguments[0].click()",spendingPage.orders);
+        extentTest.info("Orders butonuna tiklandi.");
+
         js.executeScript("arguments[0].scrollIntoView(true);",spendingPage.home);
         ReusableMethods.waitFor(1);
         Assert.assertFalse(spendingPage.ordersListViewDetails.isEmpty());

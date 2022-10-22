@@ -2,13 +2,15 @@ package tests.US019;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.SpendingPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC01 {
+public class TC01 extends TestBaseRapor {
     @Test
     public void testCase02() {
         SpendingPage spendingPage=new SpendingPage();
@@ -29,8 +31,12 @@ public class TC01 {
         js.executeScript("arguments[0].click()",spendingPage.follewers);
         js.executeScript("arguments[0].scrollIntoView(true);",spendingPage.home);
         String actualResultStr=spendingPage.follewersTable.getText();
-        if (actualResultStr.equals("No data in the table")){
-            System.out.println("Tabloda data olmadigi icin name ve email degerleri gorulemedi");
-        }
+        ReusableMethods.jsExecutorScrool(spendingPage.home);
+
+        Assert.assertEquals(actualResultStr,"No data in the table");
+        extentTest.fail("Takipçi adı görülemedi");
+
+        Assert.assertEquals(actualResultStr,"No data in the table");
+        extentTest.fail("Takipçi email i görülemedi");
     }
 }
