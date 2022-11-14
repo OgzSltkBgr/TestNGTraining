@@ -13,8 +13,9 @@ ona göre .xml formatını yazmamız gerekir.
 <suite name="istenen class'lari calistirma">
     <test name="classlar">
         <classes>
-            <class name="tests.day16.C01_BeforeMethodAfterMethod"/>
-            <class name="tests.day17.C03_SoftAssert"></class>
+            <class name="tests.SeleniumGrid1"/>
+            <class name="tests.SeleniumGrid2"/>
+            <class name="tests.SeleniumGrid3"/>
         </classes>
     </test>
 </suite>
